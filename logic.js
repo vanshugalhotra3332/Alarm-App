@@ -24,5 +24,7 @@ function setAlarm(e){
     }
 
     console.log(`Setting Alarm....... for ${alarmDate}`);
+    alert(`Alarm Set ${Math.ceil(timeToNow / 60000)} Minutes From Now`);
+
     e.preventDefault();
 }
