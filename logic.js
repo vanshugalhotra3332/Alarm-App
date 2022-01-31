@@ -1,11 +1,22 @@
 const alarmBtn = document.getElementById('alarmBtn');
 
 alarmBtn.addEventListener('click', setAlarm);
-stopDiv = document.getElementById('stop');
+snoozeDiv = document.getElementById('SnoozeDiv');
+
+audio = new Audio("goshorty.mp3");
+
+function snooze()
+{   
+    audio.pause();
+    audio.currentTime = 0;
+    snoozeDiv.innerHTML = ``;
+}
 
 function ringBell(){
-    audio = new Audio("goshorty.mp3");
     audio.play();
+    snoozeDiv.innerHTML = `<br><button type="submit" class="btn btn-primary" id="snooze">Snooze</button>`;
+    snoozeBtn = document.getElementById('snooze');
+    snoozeBtn.addEventListener('click', snooze);
 }
 
 function setAlarm(e){
